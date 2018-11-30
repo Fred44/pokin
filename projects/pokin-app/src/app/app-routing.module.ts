@@ -6,6 +6,10 @@ import { NotFoundComponent, ShellComponent } from './layout';
 
 const routes: Routes = [
   {
+    path: '', pathMatch: 'full',
+    redirectTo: 'welcome'
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
