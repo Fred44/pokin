@@ -1,3 +1,18 @@
-<p>
-  register works!
-</p>
+<a routerLink="/" class="btn btn-icon close-btn" ><clr-icon shape="close"></clr-icon></a>
+
+<div class="pokin login-wrapper">
+
+  <div class="login">
+
+    <section class="title">
+      <h3 class="welcome">Register to</h3>
+      POKIN
+      <h5 class="hint">Use your email to sign up</h5>
+    </section>
+
+    <app-register-form (submitted)="submitRegistration($event)">
+    </app-register-form>
+
+  </div>
+
+</div>

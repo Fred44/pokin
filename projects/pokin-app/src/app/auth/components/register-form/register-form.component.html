@@ -1,0 +1,30 @@
+<form class="register-form" clrForm clrLayout="vertical" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <div class="login-group">
+
+    <clr-input-container>
+      <label>Name</label>
+      <input type="text" name="name" clrInput formControlName="name" placeholder="Enter your name">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label>Email</label>
+      <input type="text" name="email" clrInput formControlName="email" placeholder="Enter your email">
+    </clr-input-container>
+
+    <clr-password-container>
+      <label>Password</label>
+      <input type="password" name="password" clrPassword formControlName="password" placeholder="Enter your password">
+    </clr-password-container>
+
+    <clr-password-container>
+      <label>Password confirmation</label>
+      <input type="password" name="confirmPassword" clrPassword formControlName="confirmPassword" placeholder="Confirm your password">
+    </clr-password-container>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid"> Register </button>
+    <a routerLink="/login" class="signup">Sign in</a>
+
+  </div>
+
+</form>

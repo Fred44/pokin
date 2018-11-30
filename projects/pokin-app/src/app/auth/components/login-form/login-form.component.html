@@ -1,0 +1,34 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+  <div class="login-group">
+
+    <clr-input-container>
+      <input type="text" name="username" clrInput formControlName="email" placeholder="Email">
+    </clr-input-container>
+
+    <clr-password-container>
+      <input type="password" name="password" clrPassword formControlName="password" placeholder="Password">
+    </clr-password-container>
+
+    <div class="options-row">
+      <clr-checkbox-wrapper class="remember-me-wrapper">
+        <label>Remember me</label>
+        <input type="checkbox" name="rememberMe" clrCheckbox formControlName="rememberMe">
+      </clr-checkbox-wrapper>
+
+      <div class="forgot-link">
+        <a (click)="onForgot()">I forgot my password</a>
+      </div>
+    </div>
+
+    <div class="error active" *ngIf="error">
+      {{error.message}}
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">NEXT</button>
+
+    <a routerLink="/register" class="signup">Sign up</a>
+
+  </div>
+
+</form>

@@ -1,3 +1,45 @@
-<p>
-  login works!
-</p>
+<a (click)="close()" class="btn btn-icon close-btn">
+  <clr-icon shape="close"></clr-icon>
+</a>
+
+<div class="pokin login-wrapper">
+
+  <div class="login" *ngIf="mode === 'login'">
+    <section class="title">
+      <h3 class="welcome">Welcome to</h3>
+      POKIN
+      <h5 class="hint">Use your social account to sign in</h5>
+    </section>
+
+    <div class="social-buttons">
+      <button class="btn btn-secondary btn-block" (click)="googleLogin()">With Google</button>
+    </div>
+
+    <div class="strike">
+      <span>OR</span>
+    </div>
+
+    <section class="title">
+      <h5 class="hint">Use your email to sign in or create one now</h5>
+    </section>
+
+    <app-login-form [error]="passErr"
+                    (submitted)="passwordLogin($event)"
+                    (forgotten)="showMode('forgot')">
+    </app-login-form>
+
+  </div>
+
+  <div class="login" *ngIf="mode === 'forgot'">
+    <section class="title">
+      <h3 class="welcome">Welcome to</h3>
+      POKIN
+      <h5 class="hint">Enter your email to recover your password</h5>
+    </section>
+
+    <app-forgot-password (submitted)="recoverPassword($event)"
+                         (cancelled)="showMode('login')">
+    </app-forgot-password>
+  </div>
+
+</div>

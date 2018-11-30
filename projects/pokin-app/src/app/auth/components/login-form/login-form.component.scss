@@ -1,0 +1,14 @@
+:host {
+
+  .options-row {
+    display: flex;
+
+    .remember-me-wrapper {
+      flex-grow: 1;
+    }
+
+    .forgot-link {
+      margin: .25rem 0 .75rem;
+    }
+  }
+}
